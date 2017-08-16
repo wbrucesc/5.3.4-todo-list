@@ -28,19 +28,14 @@ let todos = [
 
 // const doneTasks = [];
 
-// splice(index, how many)
+
 
 app.get('/', (req, res) =>{
-  // let todo = req.body.todos;
   res.render('index', {todos: todos});
 });
 
 app.post('/add', (req, res) => {
-  // console.log('body', req.body);
-  // console.log('body newTask', req.body.newTask);
-  // console.log('before', todos);
   todos.push({task: req.body.newTask, done: false});
-  // console.log('after', todos);
   res.redirect('/');
 });
 
@@ -51,15 +46,9 @@ app.post('/completed', (req, res) =>{
       item.done = true;
       console.log('clicked', item);
       console.log('clicked todos', todos);
-      // var newListItem = todos[index];
-      // todos.splice(index, 1);
-      // doneTasks.push(newListItem);
-      // console.log('todos array', todos);
-      // console.log('doneTasks array', doneTasks);
     }
   });
   res.redirect('/');
-  // console.log(req.body.done);
 });
 
 
