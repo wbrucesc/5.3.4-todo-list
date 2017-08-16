@@ -1,0 +1,30 @@
+<h1>Todo List</h1>
+<form action="/add" method="post">
+  <input type="text" name="newTask" value="">
+  <input type="submit" name="" value="Add">
+</form>
+
+  <ul>
+{{#each todos}}
+  {{#unless done}}
+    <li name="chore">
+      {{task}}
+      <form class="" action="/completed" method="post">
+        <button type="submit" name="done" value="{{task}}">Mark as complete</button>
+      </form>
+    </li>
+    {{/unless}}
+{{/each}}
+</ul>
+<hr>
+
+<h1>Completed tasks</h1>
+
+{{#each todos}}
+  {{#if done}}
+  <ul>
+    <li>{{task}}</li>
+  </ul>
+
+  {{/if}}
+{{/each}}
