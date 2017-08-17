@@ -1,30 +1,32 @@
-<h1>Todo List</h1>
-<form action="/add" method="post">
-  <input type="text" name="newTask" value="">
-  <input type="submit" name="" value="Add">
-</form>
+<div class="container">
+  <h1 class="top">Todo List</h1>
+  <form action="/add" method="post">
+    <input class="enterNew" type="text" name="newTask" value="" placeholder="Enter new task">
+    <input class="addNew" type="submit" name="" value="Add">
+  </form>
 
-  <ul>
-{{#each todos}}
-  {{#unless done}}
-    <li name="chore">
-      {{task}}
-      <form class="" action="/completed" method="post">
-        <button type="submit" name="done" value="{{task}}">Mark as complete</button>
-      </form>
-    </li>
-    {{/unless}}
-{{/each}}
-</ul>
-<hr>
-
-<h1>Completed tasks</h1>
-
-{{#each todos}}
-  {{#if done}}
-  <ul>
-    <li>{{task}}</li>
+  <ul class="chores">
+    {{#each todos}}
+      {{#unless done}}
+        <li>
+          {{task}}
+          <form class="listForm" action="/completed" method="post">
+            <button class="compButton" type="submit" name="done" value="{{task}}">Mark as complete</button>
+          </form>
+        </li>
+      {{/unless}}
+    {{/each}}
   </ul>
+  <hr>
 
-  {{/if}}
-{{/each}}
+  <h1 class="bottom">Completed Tasks</h1>
+
+  {{#each todos}}
+    {{#if done}}
+      <ul class="chores">
+        <li>{{task}}</li>
+      </ul>
+
+    {{/if}}
+  {{/each}}
+</div>

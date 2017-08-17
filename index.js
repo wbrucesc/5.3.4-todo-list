@@ -7,9 +7,9 @@ const app = express();
 
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
+app.use('/static', express.static('public'));
 
 app.use(bodyParser.urlencoded({extended: false}));
-
 
 let todos = [
   {
@@ -27,7 +27,6 @@ let todos = [
 ];
 
 // const doneTasks = [];
-
 
 
 app.get('/', (req, res) =>{

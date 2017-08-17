@@ -1,0 +1,48 @@
+body {
+  display: flex;
+  justify-content: center;
+  background-color: #fff;
+}
+
+.container {
+  width: 20%;
+  text-align: center;
+  background-color: #f2e2cd;
+}
+
+.top {
+  text-align: center;
+  font-size: 30px;
+}
+
+.top, .bottom {
+  font-family: 'Roboto', sans-serif;
+}
+
+.bottom {
+  font-size: 25px;
+}
+
+.enterNew {
+  width: 50%;
+}
+
+.addNew {
+  width: 15%;
+}
+
+.chores {
+  list-style: none;
+  font-family: 'helvetica';
+  line-height: 1.5vw;
+  padding-left: 0;
+  text-transform: capitalize;
+}
+
+.listForm {
+  display: inline;
+}
+
+.compButton {
+  margin-left: 15px;
+}
